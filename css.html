@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Personal Portfolio Website">
+<meta name="keywords" content="Portfolio, Web Developer, Student">
+<meta name="author" content="Srijal">
+
+<title>Personal Portfolio</title>
+
+<style>
+
+/* CSS VARIABLES */
+:root{
+    --primary:#1e3c72;
+    --secondary:#ff6b35;
+    --bg:#f4f7f9;
+    --card-bg:#ffffff;
+    --text:#333333;
+    --shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* DARK MODE VARIABLES */
+.dark{
+    --primary:#4d8dff;
+    --secondary:#ff9f6e;
+    --bg:#121212;
+    --card-bg:#1f1f1f;
+    --text:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    transition:0.4s ease;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+.theme-btn{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    background:white;
+    color:#1e3c72;
+}
+
+/* NAVBAR USING FLEXBOX */
+
+nav{
+    background:white;
+    padding:18px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--secondary);
+}
+
+/* MAIN GRID LAYOUT */
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+}
+
+/* CARDS */
+
+.card{
+    background:var(--card-bg);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+h2{
+    color:var(--primary);
+    margin-bottom:15px;
+    border-bottom:3px solid var(--secondary);
+    display:inline-block;
+    padding-bottom:5px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+/* PROJECTS USING FLEXBOX */
+
+.projects-container{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.project-item{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:12px;
+}
+
+.project-item a{
+    display:inline-block;
+    margin-top:10px;
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.project-item a:hover{
+    color:var(--secondary);
+}
+
+/* CERTIFICATE LINK */
+
+.cert-link{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.cert-link:hover{
+    color:var(--secondary);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* MOBILE FIRST RESPONSIVE DESIGN */
+
+@media (max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    main{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Web Developer | Student | Learner</p>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        🌙 Toggle Theme
+    </button>
+</header>
+
+<nav aria-label="Main Navigation">
+    <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section id="about" class="card">
+    <h2>About Me</h2>
+
+    <p>
+        Hello! My name is Srijal Silaniwal. I am a passionate web development
+        student learning HTML, CSS, JavaScript, Java, Python and modern web
+        technologies.
+
+        Motivated Computer Science Student with strong expertise in Java,
+        Data Structures and problem solving. Completed DSA training and
+        practiced coding regularly to improve logical thinking and efficiency.
+
+        Basic knowledge of C and Python and experience with object oriented
+        programming concepts. Looking for a chance to apply my skills in
+        software development and grow with hands-on projects.
+    </p>
+</section>
+
+<section id="projects" class="card">
+
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+
+        <article class="project-item">
+            <h3>Currency Converter</h3>
+
+            <p>
+                Java-based currency converter application capable of converting
+                values between different currencies.
+            </p>
+
+            <a href="https://github.com/Srijal223/CRC_JAVA_CURRENCY_CONVERTER_SRIJAL" target="_blank">
+                View Project
+            </a>
+        </article>
+
+        <article class="project-item">
+            <h3>Dine Flow</h3>
+
+            <p>
+                Restaurant management concept created using AI prompting and
+                workflow planning.
+            </p>
+
+            <a href="https://dine-flow-878ca5e7.base44.app/" target="_blank">
+                View Project
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<section id="skills" class="card">
+
+    <h2>Skills</h2>
+
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Core Java</li>
+        <li>Python</li>
+        <li>C Language</li>
+        <li>Data Structures & Algorithms</li>
+    </ul>
+
+</section>
+
+<section id="certifications" class="card">
+
+    <h2>Certifications</h2>
+
+    <ul>
+        <li>Python Programming - Infosys</li>
+        <li>Data Structures & Algorithms - CodeChef</li>
+        <li>AI Advantage Course - Webveda</li>
+    </ul>
+
+    <a class="cert-link"
+       href="https://drive.google.com/drive/folders/1RP2aD6zQicVO_RD-8BKSLL6pFVR2GbtE"
+       target="_blank">
+       View Certificates
+    </a>
+
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 All Rights Reserved | Made With ❤️ By Srijal</p>
+</footer>
+
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
+
